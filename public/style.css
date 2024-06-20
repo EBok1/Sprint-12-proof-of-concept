@@ -7,12 +7,27 @@
     --primary-blue: #0071b3;
     --hover-blue: #0a4669;
     --primary-grey: #e6f2f7;
+
+    /* font */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-black);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-blue);
 }
 
 nav {
@@ -50,7 +65,15 @@ nav ul li {
 }
 
 .homeTitle {
-    margin: 1em;
+    margin: 1em 1em 0 1em;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeInfo {
+    margin: 1em 1em 0 1em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,31 +105,6 @@ nav ul li {
     border-top-right-radius: 0;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-}
-
-.star {
-    font-size: 5vh;
-    cursor: pointer;
-}
-
-.one {
-    color: rgb(255, 0, 0);
-}
-
-.two {
-    color: rgb(255, 106, 0);
-}
-
-.three {
-    color: rgb(251, 255, 120);
-}
-
-.four {
-    color: rgb(255, 255, 0);
-}
-
-.five {
-    color: rgb(24, 159, 14);
 }
 
 .likeButton {
@@ -192,9 +190,13 @@ footer {
 
 .listLink {
     margin: 1em;
+    padding: .5em;
     font-size: 2em;
     text-decoration: none;
     color: var(--primary-black);
+    border: solid var(--primary-orange);
+    border-width: .2em;
+    border-radius: 20px;
 }
 
 .listLink:hover {
@@ -202,4 +204,34 @@ footer {
     font-size: 2.3em;
     text-decoration: none;
     color: var(--primary-black);
+}
+
+label:has([type="radio"]:checked) {
+    color: gold;
+}
+
+label:has(~ label [type="radio"]:checked) {
+    color: gold;
+}
+
+input {
+    /* verstop het rondje */
+    -webkit-appearance: none;
+    /* for webkit browsers */
+    appearance: none;
+}
+
+.favoritesTitle {
+    margin: 1em 1em 0 1em;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favoritesInfo {
+    margin: 1em 1em 3em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

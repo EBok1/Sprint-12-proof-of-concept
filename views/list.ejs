@@ -1,11 +1,11 @@
-<%- include('./partials/head', {current: '/list' }); %>
+<%- include('./partials/head', {current: '/list' });%>
 
     <p>
         <%= lijst.title %>
     </p>
 
     <section class="allHouses">
-        <% lijst.houses.forEach(function(house) { %>
+        <% lijst.forEach(function(house) { %>
             <div class="homeCard">
                 <div>
                     <picture>
@@ -40,21 +40,23 @@
                         <%= house.f_houses_id.price %>
                     </p>
 
-                    <div class="card">
-                        <span onclick="gfg(1)" class="star">★
-                        </span>
-                        <span onclick="gfg(2)" class="star">★
-                        </span>
-                        <span onclick="gfg(3)" class="star">★
-                        </span>
-                        <span onclick="gfg(4)" class="star">★
-                        </span>
-                        <span onclick="gfg(5)" class="star">★
-                        </span>
-                        <h3 id="output">
-                            Rating is: 0/5
-                        </h3>
-                    </div>
+                    <form>
+                        <label aria-label="1 ster">
+                            <input type="radio" name="ratingHouse1" value="1">★
+                        </label>
+                        <label aria-label="2 sterren">
+                            <input type="radio" name="ratingHouse1" value="2">★
+                        </label>
+                        <label aria-label="3 sterren">
+                            <input type="radio" name="ratingHouse1" value="3">★
+                        </label>
+                        <label aria-label="4 sterren">
+                            <input type="radio" name="ratingHouse1" value="4">★
+                        </label>
+                        <label aria-label="5 sterren">
+                            <input type="radio" name="ratingHouse1" value="5">★
+                        </label>
+                    </form>
                 </div>
             </div>
 

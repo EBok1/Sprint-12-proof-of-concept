@@ -37,6 +37,13 @@ app.get('/', function (request, response) {
     });
 })
 
+app.get('/detail', function (request, response) {
+    fetchJson(apiHouse).then((houseIdDataUitDeAPI) => {
+        response.render('detail', {
+            houseId: houseIdDataUitDeAPI.data,
+        })
+    });
+})
 
 app.get('/favorites', function (request, response) {
 
@@ -46,6 +53,7 @@ app.get('/favorites', function (request, response) {
 })
 
 app.post('/', function (request, response) {
+    console.log(request.body.house_id)
     fetchJson(`${apiList}?filter={"id":{"_eq":13}}`).then((favorietenDataUitDeAPI) => {
         const houses = favorietenDataUitDeAPI.data[0].houses;
         const addNewFavoriteHouse = houses.push(Number(request.body.house_id))
@@ -59,7 +67,7 @@ app.post('/', function (request, response) {
             }),
         }).then(tweederesponse => {
             // Handle the response from the server
-            console.log('POST request response:', tweederesponse);
+            // console.log('POST request response:', tweederesponse);
             response.redirect(303, '/')
         }).catch(error => {
             console.error('Error making POST request:', error);
@@ -71,8 +79,10 @@ app.post('/', function (request, response) {
 app.get('/list', function (request, response) {
 
     fetchJson(`${apiList}?filter={"title": {"_eq": "Mijn lijst (Ellenoor)"}}&fields=*,houses.f_houses_id.*`).then((listDataUitDeAPI) => {
-        console.log(listDataUitDeAPI.data)
-        response.render('list', { lijst: listDataUitDeAPI.data[0] })
+        // console.log(listDataUitDeAPI.data, "1")
+
+        response.render('list', { lijst: listDataUitDeAPI.data[0].houses })
+        //console.log(listDataUitDeAPI.data[0].houses[0], "2")
     });
 
 })
