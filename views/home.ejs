@@ -8,8 +8,8 @@
             Bekijk hier alle aanbevolen huizen!
         </p>
         <section class="allHouses">
-            <a href="/detail" title="Link to detail page">
-                <% houses.forEach(function(house) { %>
+            <% houses.forEach(function(house) { %>
+                <a href="/detail" title="Link to detail page">
                     <div class="homeCard">
                         <div>
                             <picture>
@@ -43,27 +43,27 @@
                             <p>
                                 <%= house.price %>
                             </p>
-            </a>
-            <form>
-                <label aria-label="1 ster">
-                    <input type="radio" name="ratingHouse1" value="1">★
-                </label>
-                <label aria-label="2 sterren">
-                    <input type="radio" name="ratingHouse1" value="2">★
-                </label>
-                <label aria-label="3 sterren">
-                    <input type="radio" name="ratingHouse1" value="3">★
-                </label>
-                <label aria-label="4 sterren">
-                    <input type="radio" name="ratingHouse1" value="4">★
-                </label>
-                <label aria-label="5 sterren">
-                    <input type="radio" name="ratingHouse1" value="5">★
-                </label>
-            </form>
-            </div>
-            </div>
-            <% }) %>
+                </a>
+                <form>
+                    <label aria-label="1 ster">
+                        <input type="radio" name="ratingHouse1" value="1">★
+                    </label>
+                    <label aria-label="2 sterren">
+                        <input type="radio" name="ratingHouse1" value="2">★
+                    </label>
+                    <label aria-label="3 sterren">
+                        <input type="radio" name="ratingHouse1" value="3">★
+                    </label>
+                    <label aria-label="4 sterren">
+                        <input type="radio" name="ratingHouse1" value="4">★
+                    </label>
+                    <label aria-label="5 sterren">
+                        <input type="radio" name="ratingHouse1" value="5">★
+                    </label>
+                </form>
+                </div>
+                </div>
+                <% }) %>
         </section>
     </main>
 
