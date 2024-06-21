@@ -1,70 +1,67 @@
 <%- include('./partials/head', {current: '/' }); %>
 
-    <main>
-        <p class="homeTitle">
-            HUIZEN
-        </p>
-        <p class="homeInfo">
-            Bekijk hier alle aanbevolen huizen!
-        </p>
-        <section class="allHouses">
-            <% houses.forEach(function(house) { %>
-                <a href="/detail" title="Link to detail page">
-                    <div class="homeCard">
-                        <div>
-                            <picture>
-                                <source class="homeImg"
-                                    srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>?format=avif"
-                                    type="image/avif">
-                                <source class="homeImg"
-                                    srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>?format=webp"
-                                    type="image/webp">
-                                <img class="homeImg"
-                                    src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
-                                    alt="house image" width="400px" height="400px">
-                            </picture>
-                        </div>
-                        <div class="infoCard">
-                            <p>
-                                <%= house.street %>
-                                    <%= house.house_nr %>
-                                        <%= house.nr_addition %>
-                            </p>
+    <p class="homeTitle">
+        HUIZEN
+    </p>
+    <p class="homeInfo">
+        Bekijk hier alle aanbevolen huizen!
+    </p>
+    <section class="allHouses">
+        <% houses.forEach(function(house) { %>
+            <a href="/detail" title="Link to detail page">
+                <div class="homeCard">
+                    <div>
+                        <picture>
+                            <source class="homeImg"
+                                srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>?format=avif"
+                                type="image/avif">
+                            <source class="homeImg"
+                                srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>?format=webp"
+                                type="image/webp">
+                            <img class="homeImg" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+                                alt="house image" width="400px" height="400px">
+                        </picture>
+                    </div>
+                    <div class="infoCard">
+                        <p>
+                            <%= house.street %>
+                                <%= house.house_nr %>
+                                    <%= house.nr_addition %>
+                        </p>
 
-                            <form method="post" action="/">
-                                <input type="hidden" value="<%= house.id %>" name="house_id">
-                                <button class="likeButton" type="submit" name="actie">♥️</button>
-                            </form>
+                        <form method="post" action="/">
+                            <input type="hidden" value="<%= house.id %>" name="house_id">
+                            <button class="likeButton" type="submit" name="actie">♥️</button>
+                        </form>
 
-                            <p>
-                                <%= house.postal_code %>
-                                    <%= house.city %>
-                            </p>
-                            <p>
-                                <%= house.price %>
-                            </p>
-                </a>
-                <form>
-                    <label aria-label="1 ster">
-                        <input type="radio" name="ratingHouse1" value="1">★
-                    </label>
-                    <label aria-label="2 sterren">
-                        <input type="radio" name="ratingHouse1" value="2">★
-                    </label>
-                    <label aria-label="3 sterren">
-                        <input type="radio" name="ratingHouse1" value="3">★
-                    </label>
-                    <label aria-label="4 sterren">
-                        <input type="radio" name="ratingHouse1" value="4">★
-                    </label>
-                    <label aria-label="5 sterren">
-                        <input type="radio" name="ratingHouse1" value="5">★
-                    </label>
-                </form>
-                </div>
-                </div>
-                <% }) %>
-        </section>
-    </main>
+                        <p>
+                            <%= house.postal_code %>
+                                <%= house.city %>
+                        </p>
+                        <p>
+                            <%= house.price %>
+                        </p>
+            </a>
+            <form>
+                <label aria-label="1 ster">
+                    <input type="radio" name="ratingHouse1" value="1">★
+                </label>
+                <label aria-label="2 sterren">
+                    <input type="radio" name="ratingHouse1" value="2">★
+                </label>
+                <label aria-label="3 sterren">
+                    <input type="radio" name="ratingHouse1" value="3">★
+                </label>
+                <label aria-label="4 sterren">
+                    <input type="radio" name="ratingHouse1" value="4">★
+                </label>
+                <label aria-label="5 sterren">
+                    <input type="radio" name="ratingHouse1" value="5">★
+                </label>
+            </form>
+            </div>
+            </div>
+            <% }) %>
+    </section>
 
     <%- include('./partials/foot') %>
