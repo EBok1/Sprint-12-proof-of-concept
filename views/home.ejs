@@ -19,7 +19,7 @@
                                 srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>?format=webp"
                                 type="image/webp">
                             <img class="homeImg" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
-                                alt="house image" width="400px" height="400px">
+                                alt="house image" width="400" height="400">
                         </picture>
                     </div>
                     <div class="infoCard">
@@ -28,20 +28,23 @@
                                 <%= house.house_nr %>
                                     <%= house.nr_addition %>
                         </p>
-
-                        <form method="post" action="/">
-                            <input type="hidden" value="<%= house.id %>" name="house_id">
-                            <button class="likeButton" type="submit" name="actie">♥️</button>
-                        </form>
-
-                        <p>
-                            <%= house.postal_code %>
-                                <%= house.city %>
-                        </p>
-                        <p>
-                            <%= house.price %>
-                        </p>
             </a>
+
+            <form method="post" action="/">
+                <input type="hidden" value="<%= house.id %>" name="house_id">
+                <button class="likeButton" type="submit" name="actie">♥️</button>
+            </form>
+
+            <a href="/detail" title="Link to detail page">
+                <p>
+                    <%= house.postal_code %>
+                        <%= house.city %>
+                </p>
+                <p>
+                    <%= house.price %>
+                </p>
+            </a>
+
             <form>
                 <label aria-label="1 ster">
                     <input type="radio" name="ratingHouse1" value="1">★
